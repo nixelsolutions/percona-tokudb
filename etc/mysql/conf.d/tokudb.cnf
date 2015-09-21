@@ -1,0 +1,16 @@
+[mysqld]
+bind-address = 0.0.0.0
+port = 3306
+skip_name_resolve
+
+#REPLICATION SPECIFIC - GENERAL
+#server-id must be unique across all mysql servers participating in replication.
+#server-id = 
+#REPLICATION SPECIFIC - MASTER 1
+replicate-same-server-id=0
+auto-increment-increment=2
+auto-increment-offset=1
+log-bin=/mysql/storage/logs/mysql-historic/binlog
+binlog-format=ROW
+expire-logs-days=15
+
